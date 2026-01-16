@@ -3,57 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marketing Workflows Guide - Antigravity IDE</title>
+    <title>Marketing Workflows - Antigravity IDE</title>
     <meta name="description" content="Bộ 16 marketing workflows mạnh mẽ cho Antigravity IDE, tự động hóa quy trình marketing">
-    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <style>
         :root {
-            /* Corporate Luxe Theme - Navy + Gold */
-            --bg-primary: #0a1628;
-            --bg-secondary: #0d1d32;
-            --bg-tertiary: #122640;
-            --bg-card: rgba(18, 38, 64, 0.6);
-            --bg-card-hover: rgba(25, 50, 82, 0.8);
+            /* Aurora Marketing Theme */
+            --bg-primary: #09090b;
+            --bg-secondary: #0c0c0f;
+            --bg-tertiary: #111114;
+            --bg-card: rgba(255, 255, 255, 0.02);
+            --bg-card-hover: rgba(255, 255, 255, 0.05);
 
-            /* Gold Accent Palette */
-            --gold-primary: #d4af37;
-            --gold-light: #f5d77a;
-            --gold-dark: #b8962d;
-            --gold-gradient: linear-gradient(135deg, #d4af37 0%, #f5d77a 50%, #d4af37 100%);
-            --gold-glow: rgba(212, 175, 55, 0.3);
+            /* Aurora Gradient Colors */
+            --aurora-cyan: #06b6d4;
+            --aurora-blue: #3b82f6;
+            --aurora-purple: #8b5cf6;
+            --aurora-pink: #ec4899;
+            --aurora-rose: #f43f5e;
             
-            /* Accent Colors */
-            --accent-blue: #3b82f6;
-            --accent-emerald: #10b981;
-            --accent-rose: #f43f5e;
-            --accent-amber: #f59e0b;
-            --accent-violet: #8b5cf6;
+            --aurora-gradient: linear-gradient(135deg, 
+                var(--aurora-cyan) 0%, 
+                var(--aurora-blue) 25%, 
+                var(--aurora-purple) 50%, 
+                var(--aurora-pink) 75%,
+                var(--aurora-rose) 100%);
             
-            --text-primary: #f8fafc;
-            --text-secondary: #94a3b8;
-            --text-muted: #64748b;
-            --text-gold: #d4af37;
+            --aurora-gradient-soft: linear-gradient(135deg, 
+                rgba(6, 182, 212, 0.15) 0%, 
+                rgba(139, 92, 246, 0.15) 50%, 
+                rgba(236, 72, 153, 0.15) 100%);
+
+            /* Text Colors */
+            --text-primary: #fafafa;
+            --text-secondary: #a1a1aa;
+            --text-muted: #71717a;
             
-            --border-color: rgba(148, 163, 184, 0.12);
-            --border-gold: rgba(212, 175, 55, 0.3);
+            /* Borders */
+            --border-color: rgba(255, 255, 255, 0.06);
+            --border-gradient: linear-gradient(135deg, 
+                rgba(6, 182, 212, 0.5), 
+                rgba(139, 92, 246, 0.5), 
+                rgba(236, 72, 153, 0.5));
             
-            --shadow-gold: 0 4px 30px rgba(212, 175, 55, 0.15);
-            --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.3);
+            /* Glows */
+            --glow-cyan: 0 0 40px rgba(6, 182, 212, 0.3);
+            --glow-purple: 0 0 40px rgba(139, 92, 246, 0.3);
+            --glow-pink: 0 0 40px rgba(236, 72, 153, 0.3);
+            --glow-multi: 0 0 60px rgba(6, 182, 212, 0.15), 0 0 80px rgba(139, 92, 246, 0.15);
             
-            --font-serif: 'Playfair Display', Georgia, serif;
-            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            /* Typography */
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
             --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
 
+            /* Radius */
             --radius-sm: 8px;
             --radius-md: 12px;
             --radius-lg: 16px;
             --radius-xl: 24px;
+            --radius-2xl: 32px;
 
-            --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-            --transition-smooth: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            /* Transitions */
+            --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-smooth: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-slow: 500ms cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         * {
@@ -70,81 +85,152 @@
             font-family: var(--font-sans);
             background: var(--bg-primary);
             color: var(--text-primary);
-            line-height: 1.7;
-            overflow-x: hidden;
+            line-height: 1.6;
             -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
         }
 
-        /* Elegant Background Pattern */
-        .bg-pattern {
+        /* Aurora Animated Background */
+        .aurora-bg {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
             z-index: -1;
-            background: 
-                linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 50%, var(--bg-primary) 100%);
             overflow: hidden;
+            background: var(--bg-primary);
         }
 
-        .bg-pattern::before {
-            content: '';
+        .aurora-blob {
             position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.4;
+            animation: float 20s ease-in-out infinite;
+        }
+
+        .aurora-blob-1 {
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, var(--aurora-cyan) 0%, transparent 70%);
+            top: -20%;
+            left: -10%;
+            animation-delay: 0s;
+        }
+
+        .aurora-blob-2 {
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, var(--aurora-purple) 0%, transparent 70%);
+            top: 20%;
+            right: -10%;
+            animation-delay: -5s;
+        }
+
+        .aurora-blob-3 {
+            width: 450px;
+            height: 450px;
+            background: radial-gradient(circle, var(--aurora-pink) 0%, transparent 70%);
+            bottom: -10%;
+            left: 30%;
+            animation-delay: -10s;
+        }
+
+        .aurora-blob-4 {
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, var(--aurora-blue) 0%, transparent 70%);
+            bottom: 30%;
+            right: 20%;
+            animation-delay: -15s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            25% { transform: translate(30px, -30px) scale(1.05); }
+            50% { transform: translate(-20px, 20px) scale(0.95); }
+            75% { transform: translate(-30px, -20px) scale(1.02); }
+        }
+
+        /* Noise Texture Overlay */
+        .noise-overlay {
+            position: fixed;
             top: 0;
             left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                radial-gradient(ellipse 80% 50% at 20% 10%, rgba(212, 175, 55, 0.08) 0%, transparent 50%),
-                radial-gradient(ellipse 60% 40% at 80% 90%, rgba(59, 130, 246, 0.06) 0%, transparent 50%);
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.03;
+            pointer-events: none;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
         }
 
-        /* Decorative Gold Line */
-        .gold-line {
-            height: 3px;
-            background: var(--gold-gradient);
-            box-shadow: 0 0 20px var(--gold-glow);
+        /* Spotlight Effect */
+        .spotlight {
+            position: fixed;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(139, 92, 246, 0.08) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+            transition: transform 0.3s ease-out, opacity 0.3s ease;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+        }
+
+        body:hover .spotlight {
+            opacity: 1;
         }
 
         /* Header */
         .header {
-            text-align: center;
-            padding: 100px 24px 80px;
             position: relative;
+            text-align: center;
+            padding: 120px 24px 100px;
+            overflow: hidden;
         }
 
-        .header-badge {
+        .header-eyebrow {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            padding: 10px 20px;
-            background: rgba(212, 175, 55, 0.1);
-            border: 1px solid var(--border-gold);
-            border-radius: 50px;
+            padding: 8px 16px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 100px;
             font-size: 0.85rem;
             font-weight: 500;
-            color: var(--gold-primary);
-            margin-bottom: 28px;
-            animation: fadeInDown 0.6s ease-out;
+            color: var(--text-secondary);
+            margin-bottom: 32px;
+            backdrop-filter: blur(10px);
         }
 
-        .header-badge span.icon {
-            font-size: 1.1rem;
+        .header-eyebrow .dot {
+            width: 8px;
+            height: 8px;
+            background: var(--aurora-gradient);
+            border-radius: 50%;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.2); }
         }
 
         .header h1 {
-            font-family: var(--font-serif);
-            font-size: clamp(3rem, 7vw, 5rem);
-            font-weight: 700;
-            color: var(--text-primary);
-            letter-spacing: -1px;
+            font-size: clamp(3.5rem, 10vw, 6rem);
+            font-weight: 800;
+            letter-spacing: -3px;
+            line-height: 1.05;
             margin-bottom: 24px;
-            animation: fadeInUp 0.6s ease-out 0.1s both;
         }
 
-        .header h1 .highlight {
-            background: var(--gold-gradient);
+        .header h1 .gradient-text {
+            background: var(--aurora-gradient);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -153,154 +239,155 @@
         .header .subtitle {
             font-size: 1.25rem;
             color: var(--text-secondary);
-            max-width: 600px;
-            margin: 0 auto 32px;
-            font-weight: 400;
-            animation: fadeInUp 0.6s ease-out 0.2s both;
+            max-width: 560px;
+            margin: 0 auto 48px;
+            line-height: 1.7;
         }
 
-        .header-stats {
+        /* Stats Row */
+        .stats-row {
             display: flex;
             justify-content: center;
-            gap: 48px;
+            gap: 64px;
             flex-wrap: wrap;
-            animation: fadeInUp 0.6s ease-out 0.3s both;
         }
 
-        .header-stat {
+        .stat-item {
             text-align: center;
         }
 
-        .header-stat-number {
-            font-family: var(--font-serif);
-            font-size: 2.5rem;
+        .stat-value {
+            font-size: 3rem;
             font-weight: 700;
-            color: var(--gold-primary);
+            background: var(--aurora-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.1;
         }
 
-        .header-stat-label {
+        .stat-label {
             font-size: 0.85rem;
             color: var(--text-muted);
             text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-top: 4px;
-        }
-
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(24px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-16px); }
-            to { opacity: 1; transform: translateY(0); }
+            letter-spacing: 1.5px;
+            margin-top: 8px;
         }
 
         /* Navigation */
         .nav {
             position: sticky;
             top: 0;
-            background: rgba(10, 22, 40, 0.92);
+            z-index: 100;
+            padding: 16px 24px;
+            background: rgba(9, 9, 11, 0.8);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             border-bottom: 1px solid var(--border-color);
-            z-index: 100;
-            padding: 14px 24px;
         }
 
-        .nav-container {
+        .nav-inner {
             max-width: 1200px;
             margin: 0 auto;
             display: flex;
+            justify-content: center;
             gap: 8px;
             flex-wrap: wrap;
-            justify-content: center;
         }
 
-        .nav-btn {
+        .nav-link {
             padding: 10px 18px;
-            background: transparent;
-            border: 1px solid var(--border-color);
-            border-radius: 50px;
-            color: var(--text-secondary);
-            font-size: 0.85rem;
+            font-size: 0.875rem;
             font-weight: 500;
-            cursor: pointer;
-            transition: var(--transition-fast);
+            color: var(--text-secondary);
             text-decoration: none;
+            border-radius: 100px;
+            border: 1px solid transparent;
+            transition: var(--transition-fast);
             white-space: nowrap;
         }
 
-        .nav-btn:hover {
-            background: rgba(212, 175, 55, 0.1);
-            color: var(--gold-primary);
-            border-color: var(--border-gold);
+        .nav-link:hover {
+            color: var(--text-primary);
+            background: var(--bg-card);
+            border-color: var(--border-color);
         }
 
-        .nav-btn.active {
-            background: var(--gold-gradient);
+        .nav-link.active {
             color: var(--bg-primary);
+            background: var(--aurora-gradient);
             border-color: transparent;
-            font-weight: 600;
         }
 
-        /* Main Content */
+        /* Main Container */
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 60px 24px;
+            padding: 80px 24px;
         }
 
         /* Section Headers */
         .section-header {
             text-align: center;
-            margin-bottom: 48px;
+            margin-bottom: 56px;
         }
 
-        .section-label {
+        .section-tag {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            font-size: 0.8rem;
+            padding: 6px 14px;
+            font-size: 0.75rem;
             font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            color: var(--gold-primary);
-            margin-bottom: 16px;
+            letter-spacing: 1.5px;
+            border-radius: 100px;
+            margin-bottom: 20px;
         }
 
-        .section-label::before,
-        .section-label::after {
-            content: '';
-            width: 30px;
-            height: 1px;
-            background: var(--gold-gradient);
+        .section-tag.core { 
+            background: rgba(6, 182, 212, 0.1); 
+            color: var(--aurora-cyan);
+            border: 1px solid rgba(6, 182, 212, 0.2);
+        }
+        .section-tag.tier1 { 
+            background: rgba(59, 130, 246, 0.1); 
+            color: var(--aurora-blue);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+        }
+        .section-tag.tier2 { 
+            background: rgba(139, 92, 246, 0.1); 
+            color: var(--aurora-purple);
+            border: 1px solid rgba(139, 92, 246, 0.2);
+        }
+        .section-tag.tier3 { 
+            background: rgba(236, 72, 153, 0.1); 
+            color: var(--aurora-pink);
+            border: 1px solid rgba(236, 72, 153, 0.2);
         }
 
         .section-title {
-            font-family: var(--font-serif);
             font-size: 2.5rem;
-            font-weight: 600;
-            color: var(--text-primary);
+            font-weight: 700;
+            letter-spacing: -1px;
             margin-bottom: 16px;
         }
 
         .section-desc {
             font-size: 1.1rem;
             color: var(--text-secondary);
-            max-width: 600px;
+            max-width: 500px;
             margin: 0 auto;
         }
 
         /* Quick Start */
         .quick-start {
-            background: var(--bg-card);
-            backdrop-filter: blur(10px);
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius-xl);
-            padding: 48px;
-            margin-bottom: 80px;
             position: relative;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-2xl);
+            padding: 48px;
+            margin-bottom: 100px;
             overflow: hidden;
         }
 
@@ -310,40 +397,57 @@
             top: 0;
             left: 0;
             right: 0;
-            height: 3px;
-            background: var(--gold-gradient);
+            height: 2px;
+            background: var(--aurora-gradient);
         }
 
         .quick-start h2 {
-            font-family: var(--font-serif);
-            font-size: 1.8rem;
-            margin-bottom: 28px;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 24px;
             display: flex;
             align-items: center;
-            gap: 14px;
+            gap: 12px;
         }
 
-        .code-block {
+        .code-window {
             background: rgba(0, 0, 0, 0.4);
             border: 1px solid var(--border-color);
-            border-radius: var(--radius-md);
-            padding: 28px 32px;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+        }
+
+        .code-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 18px;
+            background: rgba(0, 0, 0, 0.3);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .code-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .code-dot.red { background: #ff5f56; }
+        .code-dot.yellow { background: #ffbd2e; }
+        .code-dot.green { background: #27ca40; }
+
+        .code-body {
+            padding: 24px;
             font-family: var(--font-mono);
             font-size: 0.9rem;
-            overflow-x: auto;
-            position: relative;
-        }
-
-        .code-block code {
-            display: block;
             line-height: 1.8;
-            color: var(--text-secondary);
+            overflow-x: auto;
         }
 
-        .code-block .comment { color: #64748b; }
-        .code-block .command { color: var(--gold-primary); font-weight: 500; }
-        .code-block .string { color: var(--accent-emerald); }
-        .code-block .tier { color: var(--accent-violet); }
+        .code-body .comment { color: var(--text-muted); }
+        .code-body .command { color: var(--aurora-cyan); font-weight: 500; }
+        .code-body .string { color: #4ade80; }
+        .code-body .badge { color: var(--aurora-purple); }
 
         /* Workflow Grid */
         .workflow-grid {
@@ -352,109 +456,106 @@
             gap: 24px;
         }
 
-        /* Workflow Card */
+        /* Workflow Card with Gradient Border */
         .workflow-card {
+            position: relative;
             background: var(--bg-card);
-            backdrop-filter: blur(10px);
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius-lg);
+            border-radius: var(--radius-xl);
             padding: 32px;
             transition: var(--transition-smooth);
-            position: relative;
             overflow: hidden;
         }
 
-        .workflow-card::after {
+        .workflow-card::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(212, 175, 55, 0.05) 0%, transparent 60%);
-            opacity: 0;
-            transition: var(--transition-smooth);
+            inset: 0;
+            padding: 1px;
+            border-radius: var(--radius-xl);
+            background: linear-gradient(135deg, 
+                rgba(255, 255, 255, 0.1), 
+                rgba(255, 255, 255, 0.02));
+            -webkit-mask: 
+                linear-gradient(#fff 0 0) content-box, 
+                linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
             pointer-events: none;
         }
 
         .workflow-card:hover {
-            transform: translateY(-6px);
-            border-color: var(--border-gold);
-            box-shadow: var(--shadow-gold);
+            transform: translateY(-4px);
+            background: var(--bg-card-hover);
         }
 
-        .workflow-card:hover::after {
-            opacity: 1;
+        .workflow-card:hover::before {
+            background: var(--aurora-gradient);
         }
 
-        .workflow-header {
+        .workflow-card:hover {
+            box-shadow: var(--glow-multi);
+        }
+
+        .workflow-top {
             display: flex;
-            align-items: flex-start;
             justify-content: space-between;
+            align-items: flex-start;
             margin-bottom: 16px;
-            flex-wrap: wrap;
             gap: 12px;
         }
 
-        .workflow-command {
+        .workflow-cmd {
             font-family: var(--font-mono);
-            font-size: 1.3rem;
-            font-weight: 500;
-            color: var(--gold-primary);
+            font-size: 1.25rem;
+            font-weight: 600;
+            background: var(--aurora-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
-        .workflow-badge {
-            padding: 6px 14px;
-            border-radius: 50px;
+        .workflow-tag {
+            padding: 5px 12px;
             font-size: 0.7rem;
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.5px;
+            border-radius: 100px;
+            white-space: nowrap;
         }
 
-        .workflow-badge.strategy {
+        .workflow-tag.strategy { 
             background: rgba(139, 92, 246, 0.15);
             color: #a78bfa;
-            border: 1px solid rgba(139, 92, 246, 0.3);
         }
-
-        .workflow-badge.automation {
+        .workflow-tag.automation { 
             background: rgba(16, 185, 129, 0.15);
             color: #34d399;
-            border: 1px solid rgba(16, 185, 129, 0.3);
         }
-
-        .workflow-badge.growth {
+        .workflow-tag.growth { 
             background: rgba(245, 158, 11, 0.15);
             color: #fbbf24;
-            border: 1px solid rgba(245, 158, 11, 0.3);
         }
-
-        .workflow-badge.analytics {
+        .workflow-tag.analytics { 
             background: rgba(59, 130, 246, 0.15);
             color: #60a5fa;
-            border: 1px solid rgba(59, 130, 246, 0.3);
+        }
+        .workflow-tag.core { 
+            background: rgba(6, 182, 212, 0.15);
+            color: #22d3ee;
         }
 
-        .workflow-badge.core {
-            background: rgba(212, 175, 55, 0.15);
-            color: var(--gold-primary);
-            border: 1px solid var(--border-gold);
-        }
-
-        .workflow-title {
-            font-family: var(--font-serif);
-            font-size: 1.25rem;
+        .workflow-name {
+            font-size: 1.15rem;
             font-weight: 600;
-            margin-bottom: 12px;
-            color: var(--text-primary);
+            margin-bottom: 10px;
         }
 
         .workflow-desc {
+            font-size: 0.9rem;
             color: var(--text-secondary);
-            font-size: 0.92rem;
+            line-height: 1.6;
             margin-bottom: 20px;
-            line-height: 1.65;
         }
 
         .workflow-features {
@@ -470,113 +571,46 @@
             gap: 6px;
             padding: 6px 12px;
             background: rgba(0, 0, 0, 0.3);
-            border-radius: 50px;
-            font-size: 0.78rem;
+            border-radius: 100px;
+            font-size: 0.75rem;
             color: var(--text-secondary);
         }
 
         .workflow-feature::before {
             content: '✓';
-            color: var(--gold-primary);
-            font-weight: 600;
+            color: var(--aurora-cyan);
+            font-size: 0.7rem;
         }
 
         .workflow-example {
-            background: rgba(0, 0, 0, 0.4);
+            background: rgba(0, 0, 0, 0.3);
             border: 1px solid var(--border-color);
             border-radius: var(--radius-sm);
-            padding: 14px 18px;
+            padding: 12px 16px;
             font-family: var(--font-mono);
-            font-size: 0.82rem;
-            color: var(--gold-light);
+            font-size: 0.8rem;
+            color: var(--aurora-cyan);
         }
 
-        /* Tier Sections */
-        .tier-section {
-            margin-bottom: 80px;
+        /* Section Divider */
+        .section-divider {
+            margin: 100px 0;
+            height: 1px;
+            background: linear-gradient(90deg, 
+                transparent, 
+                var(--border-color) 20%, 
+                var(--border-color) 80%, 
+                transparent);
         }
 
-        .tier-header {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            margin-bottom: 40px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .tier-icon {
-            width: 56px;
-            height: 56px;
-            border-radius: var(--radius-md);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            box-shadow: var(--shadow-gold);
-        }
-
-        .tier-icon.core { background: var(--gold-gradient); }
-        .tier-icon.tier-1 { background: linear-gradient(135deg, #3b82f6, #60a5fa); }
-        .tier-icon.tier-2 { background: linear-gradient(135deg, #8b5cf6, #a78bfa); }
-        .tier-icon.tier-3 { background: linear-gradient(135deg, #10b981, #34d399); }
-
-        .tier-info h2 {
-            font-family: var(--font-serif);
-            font-size: 1.6rem;
-            font-weight: 700;
-            margin-bottom: 4px;
-        }
-
-        .tier-info p {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-        }
-
-        .tier-badge {
-            display: inline-block;
-            padding: 4px 12px;
-            border-radius: 50px;
-            font-size: 0.7rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-left: auto;
-        }
-
-        .tier-badge.core-badge {
-            background: rgba(212, 175, 55, 0.15);
-            color: var(--gold-primary);
-            border: 1px solid var(--border-gold);
-        }
-
-        .tier-badge.tier-1-badge {
-            background: rgba(59, 130, 246, 0.15);
-            color: #60a5fa;
-            border: 1px solid rgba(59, 130, 246, 0.3);
-        }
-
-        .tier-badge.tier-2-badge {
-            background: rgba(139, 92, 246, 0.15);
-            color: #a78bfa;
-            border: 1px solid rgba(139, 92, 246, 0.3);
-        }
-
-        .tier-badge.tier-3-badge {
-            background: rgba(16, 185, 129, 0.15);
-            color: #34d399;
-            border: 1px solid rgba(16, 185, 129, 0.3);
-        }
-
-        /* Use Cases Section */
+        /* Use Cases */
         .use-cases-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 20px;
-            margin-top: 40px;
         }
 
-        .use-case-card {
+        .use-case {
             background: var(--bg-card);
             border: 1px solid var(--border-color);
             border-radius: var(--radius-lg);
@@ -585,8 +619,8 @@
             transition: var(--transition-smooth);
         }
 
-        .use-case-card:hover {
-            border-color: var(--border-gold);
+        .use-case:hover {
+            border-color: rgba(139, 92, 246, 0.3);
             transform: translateY(-4px);
         }
 
@@ -595,26 +629,28 @@
             margin-bottom: 16px;
         }
 
-        .use-case-card h4 {
-            font-family: var(--font-serif);
-            font-size: 1.15rem;
-            margin-bottom: 10px;
-            color: var(--gold-primary);
+        .use-case h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            background: var(--aurora-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
-        .use-case-card p {
-            color: var(--text-secondary);
+        .use-case p {
             font-size: 0.85rem;
-            line-height: 1.6;
+            color: var(--text-secondary);
+            line-height: 1.5;
         }
 
         /* Tips Section */
         .tips-section {
             background: var(--bg-card);
             border: 1px solid var(--border-color);
-            border-radius: var(--radius-xl);
+            border-radius: var(--radius-2xl);
             padding: 48px;
-            margin-top: 60px;
             position: relative;
             overflow: hidden;
         }
@@ -625,18 +661,18 @@
             top: 0;
             left: 0;
             right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, var(--accent-emerald), var(--gold-primary));
+            height: 2px;
+            background: linear-gradient(90deg, var(--aurora-cyan), var(--aurora-purple), var(--aurora-pink));
         }
 
         .tips-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
+            gap: 16px;
             margin-top: 32px;
         }
 
-        .tip-card {
+        .tip {
             display: flex;
             gap: 16px;
             padding: 20px;
@@ -646,21 +682,21 @@
             transition: var(--transition-fast);
         }
 
-        .tip-card:hover {
-            border-color: var(--border-gold);
-            background: rgba(212, 175, 55, 0.05);
+        .tip:hover {
+            border-color: rgba(6, 182, 212, 0.3);
+            background: rgba(6, 182, 212, 0.05);
         }
 
-        .tip-number {
-            width: 36px;
-            height: 36px;
-            background: var(--gold-gradient);
+        .tip-num {
+            width: 32px;
+            height: 32px;
+            background: var(--aurora-gradient);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
+            font-size: 0.85rem;
             font-weight: 700;
-            font-size: 0.9rem;
             color: var(--bg-primary);
             flex-shrink: 0;
         }
@@ -668,13 +704,12 @@
         .tip-content h4 {
             font-size: 0.95rem;
             font-weight: 600;
-            margin-bottom: 6px;
-            color: var(--text-primary);
+            margin-bottom: 4px;
         }
 
         .tip-content p {
-            color: var(--text-secondary);
             font-size: 0.85rem;
+            color: var(--text-secondary);
             line-height: 1.5;
         }
 
@@ -682,54 +717,43 @@
         .cta-section {
             text-align: center;
             padding: 80px 24px;
-            margin-top: 40px;
         }
 
         .cta-section h2 {
-            font-family: var(--font-serif);
             font-size: 2.5rem;
-            margin-bottom: 20px;
+            font-weight: 700;
+            letter-spacing: -1px;
+            margin-bottom: 16px;
+        }
+
+        .cta-section .gradient-text {
+            background: var(--aurora-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .cta-section p {
-            color: var(--text-secondary);
             font-size: 1.1rem;
+            color: var(--text-secondary);
             margin-bottom: 32px;
-        }
-
-        .cta-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            padding: 16px 36px;
-            background: var(--gold-gradient);
-            color: var(--bg-primary);
-            font-family: var(--font-sans);
-            font-size: 1rem;
-            font-weight: 600;
-            border: none;
-            border-radius: 50px;
-            cursor: pointer;
-            text-decoration: none;
-            transition: var(--transition-smooth);
-            box-shadow: var(--shadow-gold);
-        }
-
-        .cta-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 40px rgba(212, 175, 55, 0.3);
         }
 
         .cta-code {
             display: inline-block;
-            margin-top: 20px;
-            padding: 14px 24px;
+            padding: 16px 28px;
             background: rgba(0, 0, 0, 0.4);
             border: 1px solid var(--border-color);
-            border-radius: var(--radius-md);
+            border-radius: var(--radius-lg);
             font-family: var(--font-mono);
-            font-size: 0.9rem;
-            color: var(--gold-light);
+            font-size: 0.95rem;
+            color: var(--aurora-cyan);
+            transition: var(--transition-smooth);
+        }
+
+        .cta-code:hover {
+            border-color: var(--aurora-cyan);
+            box-shadow: var(--glow-cyan);
         }
 
         /* Footer */
@@ -740,27 +764,30 @@
         }
 
         .footer-logo {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
+            font-size: 3rem;
+            margin-bottom: 16px;
         }
 
         .footer h3 {
-            font-family: var(--font-serif);
-            font-size: 1.5rem;
-            margin-bottom: 12px;
-            color: var(--gold-primary);
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            background: var(--aurora-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .footer p {
             color: var(--text-muted);
-            font-size: 0.95rem;
+            font-size: 0.9rem;
         }
 
         .footer-links {
             display: flex;
-            gap: 32px;
             justify-content: center;
-            margin-top: 28px;
+            gap: 32px;
+            margin-top: 24px;
         }
 
         .footer-links a {
@@ -771,17 +798,17 @@
         }
 
         .footer-links a:hover {
-            color: var(--gold-primary);
+            color: var(--aurora-cyan);
         }
 
         /* Scroll to top */
         .scroll-top {
             position: fixed;
-            bottom: 32px;
-            right: 32px;
-            width: 52px;
-            height: 52px;
-            background: var(--gold-gradient);
+            bottom: 28px;
+            right: 28px;
+            width: 48px;
+            height: 48px;
+            background: var(--aurora-gradient);
             border: none;
             border-radius: 50%;
             cursor: pointer;
@@ -791,7 +818,7 @@
             opacity: 0;
             visibility: hidden;
             transition: var(--transition-smooth);
-            box-shadow: var(--shadow-gold);
+            box-shadow: var(--glow-multi);
             z-index: 1000;
         }
 
@@ -801,52 +828,48 @@
         }
 
         .scroll-top:hover {
-            transform: translateY(-4px);
+            transform: translateY(-4px) scale(1.05);
         }
 
         .scroll-top svg {
-            width: 24px;
-            height: 24px;
+            width: 22px;
+            height: 22px;
             fill: var(--bg-primary);
         }
 
         /* Responsive */
         @media (max-width: 768px) {
             .header {
-                padding: 70px 20px 50px;
+                padding: 80px 20px 60px;
             }
 
             .header h1 {
-                font-size: 2.5rem;
+                font-size: 2.8rem;
+                letter-spacing: -1px;
             }
 
-            .header-stats {
-                gap: 28px;
+            .stats-row {
+                gap: 32px;
             }
 
-            .quick-start, .tips-section {
-                padding: 32px 20px;
+            .stat-value {
+                font-size: 2.2rem;
             }
 
             .workflow-grid {
                 grid-template-columns: 1fr;
             }
 
-            .tier-header {
-                flex-wrap: wrap;
+            .quick-start, .tips-section {
+                padding: 32px 20px;
             }
 
-            .tier-badge {
-                margin-left: 0;
-                margin-top: 12px;
-            }
-
-            .nav-container {
+            .nav-inner {
                 gap: 6px;
             }
 
-            .nav-btn {
-                padding: 8px 14px;
+            .nav-link {
+                padding: 8px 12px;
                 font-size: 0.8rem;
             }
 
@@ -857,198 +880,198 @@
     </style>
 </head>
 <body>
-    <div class="bg-pattern"></div>
-    <div class="gold-line"></div>
+    <!-- Aurora Animated Background -->
+    <div class="aurora-bg">
+        <div class="aurora-blob aurora-blob-1"></div>
+        <div class="aurora-blob aurora-blob-2"></div>
+        <div class="aurora-blob aurora-blob-3"></div>
+        <div class="aurora-blob aurora-blob-4"></div>
+    </div>
+    <div class="noise-overlay"></div>
+    <div class="spotlight" id="spotlight"></div>
 
     <!-- Header -->
     <header class="header">
-        <div class="header-badge">
-            <span class="icon">📣</span>
+        <div class="header-eyebrow">
+            <span class="dot"></span>
             <span>Marketing Automation Suite</span>
         </div>
-        <h1>Marketing <span class="highlight">Workflows</span></h1>
+        <h1>Marketing<br><span class="gradient-text">Workflows</span></h1>
         <p class="subtitle">Bộ 16 workflows mạnh mẽ cho Antigravity IDE, tự động hóa toàn bộ quy trình marketing từ chiến lược đến thực thi</p>
         
-        <div class="header-stats">
-            <div class="header-stat">
-                <div class="header-stat-number">16</div>
-                <div class="header-stat-label">Workflows</div>
+        <div class="stats-row">
+            <div class="stat-item">
+                <div class="stat-value">16</div>
+                <div class="stat-label">Workflows</div>
             </div>
-            <div class="header-stat">
-                <div class="header-stat-number">50+</div>
-                <div class="header-stat-label">Templates</div>
+            <div class="stat-item">
+                <div class="stat-value">50+</div>
+                <div class="stat-label">Templates</div>
             </div>
-            <div class="header-stat">
-                <div class="header-stat-number">4</div>
-                <div class="header-stat-label">Tier Levels</div>
+            <div class="stat-item">
+                <div class="stat-value">4</div>
+                <div class="stat-label">Tiers</div>
             </div>
         </div>
     </header>
 
     <!-- Navigation -->
     <nav class="nav">
-        <div class="nav-container">
-            <a href="#quick-start" class="nav-btn">🚀 Quick Start</a>
-            <a href="#core" class="nav-btn">✦ Core</a>
-            <a href="#tier-1" class="nav-btn">★ Tier 1</a>
-            <a href="#tier-2" class="nav-btn">★★ Tier 2</a>
-            <a href="#tier-3" class="nav-btn">★★★ Tier 3</a>
-            <a href="#use-cases" class="nav-btn">💡 Use Cases</a>
-            <a href="#tips" class="nav-btn">🎯 Tips</a>
+        <div class="nav-inner">
+            <a href="#quick-start" class="nav-link">🚀 Start</a>
+            <a href="#core" class="nav-link">✦ Core</a>
+            <a href="#tier1" class="nav-link">★ Tier 1</a>
+            <a href="#tier2" class="nav-link">★★ Tier 2</a>
+            <a href="#tier3" class="nav-link">★★★ Tier 3</a>
+            <a href="#use-cases" class="nav-link">💡 Use Cases</a>
+            <a href="#tips" class="nav-link">🎯 Tips</a>
         </div>
     </nav>
 
     <main class="container">
         <!-- Quick Start -->
         <section id="quick-start" class="quick-start">
-            <h2><span>🚀</span> Quick Start</h2>
-            <div class="code-block">
-                <code>
+            <h2>🚀 Quick Start</h2>
+            <div class="code-window">
+                <div class="code-header">
+                    <span class="code-dot red"></span>
+                    <span class="code-dot yellow"></span>
+                    <span class="code-dot green"></span>
+                </div>
+                <div class="code-body">
                     <span class="comment"># Install marketing workflows</span><br>
                     <span class="command">npx</span> @pipyl/antigravity-marketing-workflows init<br><br>
-                    <span class="comment"># Core workflows - Available immediately</span><br>
-                    <span class="command">/marketing-campaign</span> <span class="string">"launch new AI product"</span><br>
+                    <span class="comment"># Core workflows</span><br>
+                    <span class="command">/marketing-campaign</span> <span class="string">"launch AI product"</span><br>
                     <span class="command">/content-create</span> <span class="string">"AI in Marketing 2025"</span><br>
-                    <span class="command">/ads-optimize</span> <span class="string">"Meta Ads lead generation"</span><br>
-                    <span class="command">/lead-generate</span> <span class="string">"B2B SaaS funnel"</span><br><br>
-                    <span class="comment"># Advanced workflows - Tier 1+</span><br>
-                    <span class="command">/email-automate</span> <span class="tier">✨ 20+ email templates</span><br>
-                    <span class="command">/analytics-report</span> <span class="tier">✨ KPI dashboards</span><br>
-                    <span class="command">/competitor-spy</span> <span class="tier">✨ market intelligence</span>
-                </code>
+                    <span class="command">/ads-optimize</span> <span class="string">"Meta lead generation"</span><br><br>
+                    <span class="comment"># Advanced workflows</span><br>
+                    <span class="command">/email-automate</span> <span class="badge">✨ 20+ templates</span><br>
+                    <span class="command">/analytics-report</span> <span class="badge">✨ KPI dashboards</span><br>
+                    <span class="command">/competitor-spy</span> <span class="badge">✨ market intel</span>
+                </div>
             </div>
         </section>
 
         <!-- Core Workflows -->
-        <section id="core" class="tier-section">
-            <div class="tier-header">
-                <div class="tier-icon core">✦</div>
-                <div class="tier-info">
-                    <h2>Core Workflows</h2>
-                    <p>6 essential workflows cho mọi chiến dịch marketing</p>
-                </div>
-                <span class="tier-badge core-badge">Foundation</span>
+        <section id="core">
+            <div class="section-header">
+                <span class="section-tag core">✦ Foundation</span>
+                <h2 class="section-title">Core Workflows</h2>
+                <p class="section-desc">6 essential workflows cho mọi chiến dịch marketing</p>
             </div>
 
             <div class="workflow-grid">
-                <!-- /marketing-campaign -->
                 <article class="workflow-card">
-                    <div class="workflow-header">
-                        <span class="workflow-command">/marketing-campaign</span>
-                        <span class="workflow-badge strategy">Strategy</span>
+                    <div class="workflow-top">
+                        <span class="workflow-cmd">/marketing-campaign</span>
+                        <span class="workflow-tag strategy">Strategy</span>
                     </div>
-                    <h3 class="workflow-title">Campaign Planning</h3>
-                    <p class="workflow-desc">End-to-end marketing campaign planning. Từ brief đến execution plan với KPIs tracking chi tiết.</p>
+                    <h3 class="workflow-name">Campaign Planning</h3>
+                    <p class="workflow-desc">End-to-end marketing campaign planning. Từ brief đến execution với KPIs tracking.</p>
                     <div class="workflow-features">
                         <span class="workflow-feature">SMART Goals</span>
                         <span class="workflow-feature">Channel Strategy</span>
                         <span class="workflow-feature">Budget Planning</span>
                     </div>
-                    <div class="workflow-example">/marketing-campaign "ra mắt sản phẩm AI"</div>
+                    <div class="workflow-example">/marketing-campaign "product launch"</div>
                 </article>
 
-                <!-- /content-create -->
                 <article class="workflow-card">
-                    <div class="workflow-header">
-                        <span class="workflow-command">/content-create</span>
-                        <span class="workflow-badge core">Multi-Platform</span>
+                    <div class="workflow-top">
+                        <span class="workflow-cmd">/content-create</span>
+                        <span class="workflow-tag core">Multi-Platform</span>
                     </div>
-                    <h3 class="workflow-title">Content Marketing</h3>
-                    <p class="workflow-desc">Tạo content chất lượng cao cho nhiều platform từ một ý tưởng. Blog, social, email, video scripts.</p>
+                    <h3 class="workflow-name">Content Marketing</h3>
+                    <p class="workflow-desc">Tạo content cho nhiều platform từ một ý tưởng. Blog, social, email, video.</p>
                     <div class="workflow-features">
                         <span class="workflow-feature">SEO Optimized</span>
                         <span class="workflow-feature">Repurposing Matrix</span>
                         <span class="workflow-feature">5 Formats</span>
                     </div>
-                    <div class="workflow-example">/content-create "AI trong Marketing"</div>
+                    <div class="workflow-example">/content-create "AI trends 2025"</div>
                 </article>
 
-                <!-- /ads-optimize -->
                 <article class="workflow-card">
-                    <div class="workflow-header">
-                        <span class="workflow-command">/ads-optimize</span>
-                        <span class="workflow-badge growth">Paid Ads</span>
+                    <div class="workflow-top">
+                        <span class="workflow-cmd">/ads-optimize</span>
+                        <span class="workflow-tag growth">Paid Ads</span>
                     </div>
-                    <h3 class="workflow-title">Ads Optimization</h3>
-                    <p class="workflow-desc">Optimization cho Meta Ads và Google Ads. Ad copy variants, targeting, budget allocation.</p>
+                    <h3 class="workflow-name">Ads Optimization</h3>
+                    <p class="workflow-desc">Optimization cho Meta & Google Ads. Ad copy, targeting, budget allocation.</p>
                     <div class="workflow-features">
                         <span class="workflow-feature">A/B Copy</span>
                         <span class="workflow-feature">Audience Targeting</span>
                         <span class="workflow-feature">ROAS Tracking</span>
                     </div>
-                    <div class="workflow-example">/ads-optimize "Meta Ads lead gen"</div>
+                    <div class="workflow-example">/ads-optimize "Meta lead gen"</div>
                 </article>
 
-                <!-- /lead-generate -->
                 <article class="workflow-card">
-                    <div class="workflow-header">
-                        <span class="workflow-command">/lead-generate</span>
-                        <span class="workflow-badge automation">Lead Gen</span>
+                    <div class="workflow-top">
+                        <span class="workflow-cmd">/lead-generate</span>
+                        <span class="workflow-tag automation">Lead Gen</span>
                     </div>
-                    <h3 class="workflow-title">Lead Generation</h3>
-                    <p class="workflow-desc">Lead generation và nurturing toàn diện. Lead magnets, email sequences, landing pages, scoring.</p>
+                    <h3 class="workflow-name">Lead Generation</h3>
+                    <p class="workflow-desc">Lead magnets, email sequences, landing pages, scoring framework.</p>
                     <div class="workflow-features">
                         <span class="workflow-feature">Lead Magnets</span>
                         <span class="workflow-feature">Email Sequences</span>
                         <span class="workflow-feature">Lead Scoring</span>
                     </div>
-                    <div class="workflow-example">/lead-generate "SaaS product"</div>
+                    <div class="workflow-example">/lead-generate "B2B SaaS"</div>
                 </article>
 
-                <!-- /seo-audit -->
                 <article class="workflow-card">
-                    <div class="workflow-header">
-                        <span class="workflow-command">/seo-audit</span>
-                        <span class="workflow-badge analytics">SEO</span>
+                    <div class="workflow-top">
+                        <span class="workflow-cmd">/seo-audit</span>
+                        <span class="workflow-tag analytics">SEO</span>
                     </div>
-                    <h3 class="workflow-title">SEO Audit</h3>
-                    <p class="workflow-desc">SEO audit toàn diện: Technical SEO, On-page, Content SEO và đề xuất cải thiện ranking.</p>
+                    <h3 class="workflow-name">SEO Audit</h3>
+                    <p class="workflow-desc">Technical, On-page, Content SEO audit với action plan cải thiện.</p>
                     <div class="workflow-features">
                         <span class="workflow-feature">Technical Check</span>
                         <span class="workflow-feature">On-page Analysis</span>
                         <span class="workflow-feature">Action Plan</span>
                     </div>
-                    <div class="workflow-example">/seo-audit "https://example.com"</div>
+                    <div class="workflow-example">/seo-audit "example.com"</div>
                 </article>
 
-                <!-- /social-engage -->
                 <article class="workflow-card">
-                    <div class="workflow-header">
-                        <span class="workflow-command">/social-engage</span>
-                        <span class="workflow-badge strategy">Social</span>
+                    <div class="workflow-top">
+                        <span class="workflow-cmd">/social-engage</span>
+                        <span class="workflow-tag strategy">Social</span>
                     </div>
-                    <h3 class="workflow-title">Social Engagement</h3>
-                    <p class="workflow-desc">Tối ưu engagement và community management. Content calendar, templates, influencer outreach.</p>
+                    <h3 class="workflow-name">Social Engagement</h3>
+                    <p class="workflow-desc">Content calendar, engagement templates, community management.</p>
                     <div class="workflow-features">
                         <span class="workflow-feature">Content Calendar</span>
                         <span class="workflow-feature">Reply Templates</span>
                         <span class="workflow-feature">KPI Tracking</span>
                     </div>
-                    <div class="workflow-example">/social-engage "LinkedIn + Twitter"</div>
+                    <div class="workflow-example">/social-engage "LinkedIn"</div>
                 </article>
             </div>
         </section>
 
+        <div class="section-divider"></div>
+
         <!-- Tier 1 -->
-        <section id="tier-1" class="tier-section">
-            <div class="tier-header">
-                <div class="tier-icon tier-1">★</div>
-                <div class="tier-info">
-                    <h2>Tier 1 — Advanced</h2>
-                    <p>3 workflows cho automation và analytics chuyên sâu</p>
-                </div>
-                <span class="tier-badge tier-1-badge">Advanced</span>
+        <section id="tier1">
+            <div class="section-header">
+                <span class="section-tag tier1">★ Advanced</span>
+                <h2 class="section-title">Tier 1 Workflows</h2>
+                <p class="section-desc">3 workflows cho automation và analytics chuyên sâu</p>
             </div>
 
             <div class="workflow-grid">
-                <!-- /email-automate -->
                 <article class="workflow-card">
-                    <div class="workflow-header">
-                        <span class="workflow-command">/email-automate</span>
-                        <span class="workflow-badge automation">Automation</span>
+                    <div class="workflow-top">
+                        <span class="workflow-cmd">/email-automate</span>
+                        <span class="workflow-tag automation">Automation</span>
                     </div>
-                    <h3 class="workflow-title">Email Marketing Automation</h3>
-                    <p class="workflow-desc">Tự động hóa email marketing end-to-end. 20+ email templates, sequences, deliverability best practices.</p>
+                    <h3 class="workflow-name">Email Automation</h3>
+                    <p class="workflow-desc">20+ email templates, sequences, deliverability best practices.</p>
                     <div class="workflow-features">
                         <span class="workflow-feature">Welcome Series</span>
                         <span class="workflow-feature">Abandoned Cart</span>
@@ -1057,205 +1080,196 @@
                     <div class="workflow-example">/email-automate "SaaS onboarding"</div>
                 </article>
 
-                <!-- /analytics-report -->
                 <article class="workflow-card">
-                    <div class="workflow-header">
-                        <span class="workflow-command">/analytics-report</span>
-                        <span class="workflow-badge analytics">Analytics</span>
+                    <div class="workflow-top">
+                        <span class="workflow-cmd">/analytics-report</span>
+                        <span class="workflow-tag analytics">Analytics</span>
                     </div>
-                    <h3 class="workflow-title">Marketing Analytics</h3>
-                    <p class="workflow-desc">Reports và dashboards phân tích hiệu quả marketing. KPI frameworks, attribution, visualization.</p>
+                    <h3 class="workflow-name">Marketing Analytics</h3>
+                    <p class="workflow-desc">Reports, dashboards, KPI frameworks, attribution models.</p>
                     <div class="workflow-features">
-                        <span class="workflow-feature">Weekly/Monthly Reports</span>
-                        <span class="workflow-feature">Attribution Models</span>
-                        <span class="workflow-feature">Executive Dashboard</span>
+                        <span class="workflow-feature">Weekly Reports</span>
+                        <span class="workflow-feature">Attribution</span>
+                        <span class="workflow-feature">Dashboards</span>
                     </div>
-                    <div class="workflow-example">/analytics-report "Monthly CMO report"</div>
+                    <div class="workflow-example">/analytics-report "monthly"</div>
                 </article>
 
-                <!-- /competitor-spy -->
                 <article class="workflow-card">
-                    <div class="workflow-header">
-                        <span class="workflow-command">/competitor-spy</span>
-                        <span class="workflow-badge strategy">Intelligence</span>
+                    <div class="workflow-top">
+                        <span class="workflow-cmd">/competitor-spy</span>
+                        <span class="workflow-tag strategy">Intelligence</span>
                     </div>
-                    <h3 class="workflow-title">Competitor Intelligence</h3>
-                    <p class="workflow-desc">Phân tích và theo dõi đối thủ toàn diện. Product, marketing, content, pricing analysis với action plan.</p>
+                    <h3 class="workflow-name">Competitor Intelligence</h3>
+                    <p class="workflow-desc">Product, marketing, pricing analysis với SWOT và action plan.</p>
                     <div class="workflow-features">
                         <span class="workflow-feature">Feature Matrix</span>
-                        <span class="workflow-feature">SEO Gap Analysis</span>
+                        <span class="workflow-feature">SEO Gap</span>
                         <span class="workflow-feature">SWOT Report</span>
                     </div>
-                    <div class="workflow-example">/competitor-spy "HubSpot, Mailchimp"</div>
+                    <div class="workflow-example">/competitor-spy "HubSpot"</div>
                 </article>
             </div>
         </section>
 
+        <div class="section-divider"></div>
+
         <!-- Tier 2 -->
-        <section id="tier-2" class="tier-section">
-            <div class="tier-header">
-                <div class="tier-icon tier-2">★★</div>
-                <div class="tier-info">
-                    <h2>Tier 2 — Premium</h2>
-                    <p>3 workflows cho branding và customer success</p>
-                </div>
-                <span class="tier-badge tier-2-badge">Premium</span>
+        <section id="tier2">
+            <div class="section-header">
+                <span class="section-tag tier2">★★ Premium</span>
+                <h2 class="section-title">Tier 2 Workflows</h2>
+                <p class="section-desc">3 workflows cho branding và customer success</p>
             </div>
 
             <div class="workflow-grid">
-                <!-- /influencer-collab -->
                 <article class="workflow-card">
-                    <div class="workflow-header">
-                        <span class="workflow-command">/influencer-collab</span>
-                        <span class="workflow-badge strategy">Influencer</span>
+                    <div class="workflow-top">
+                        <span class="workflow-cmd">/influencer-collab</span>
+                        <span class="workflow-tag strategy">Influencer</span>
                     </div>
-                    <h3 class="workflow-title">Influencer Marketing</h3>
-                    <p class="workflow-desc">Quản lý toàn bộ quy trình influencer marketing. Discovery, outreach, contracts, ROI tracking.</p>
+                    <h3 class="workflow-name">Influencer Marketing</h3>
+                    <p class="workflow-desc">Discovery, outreach, contracts, campaign tracking, ROI.</p>
                     <div class="workflow-features">
-                        <span class="workflow-feature">Influencer Vetting</span>
-                        <span class="workflow-feature">Contract Templates</span>
+                        <span class="workflow-feature">Vetting Criteria</span>
+                        <span class="workflow-feature">Contracts</span>
                         <span class="workflow-feature">ROI Calculator</span>
                     </div>
-                    <div class="workflow-example">/influencer-collab "Instagram + TikTok"</div>
+                    <div class="workflow-example">/influencer-collab "Instagram"</div>
                 </article>
 
-                <!-- /brand-identity -->
                 <article class="workflow-card">
-                    <div class="workflow-header">
-                        <span class="workflow-command">/brand-identity</span>
-                        <span class="workflow-badge core">Branding</span>
+                    <div class="workflow-top">
+                        <span class="workflow-cmd">/brand-identity</span>
+                        <span class="workflow-tag core">Branding</span>
                     </div>
-                    <h3 class="workflow-title">Brand Strategy</h3>
-                    <p class="workflow-desc">Xây dựng và duy trì nhận diện thương hiệu. Brand voice, visual identity, messaging guidelines.</p>
+                    <h3 class="workflow-name">Brand Strategy</h3>
+                    <p class="workflow-desc">Brand voice, visual identity, messaging, guidelines.</p>
                     <div class="workflow-features">
                         <span class="workflow-feature">Brand Pillars</span>
-                        <span class="workflow-feature">Voice Guidelines</span>
+                        <span class="workflow-feature">Voice Guide</span>
                         <span class="workflow-feature">Visual Identity</span>
                     </div>
-                    <div class="workflow-example">/brand-identity "B2B SaaS startup"</div>
+                    <div class="workflow-example">/brand-identity "B2B startup"</div>
                 </article>
 
-                <!-- /retention-nurture -->
                 <article class="workflow-card">
-                    <div class="workflow-header">
-                        <span class="workflow-command">/retention-nurture</span>
-                        <span class="workflow-badge automation">Retention</span>
+                    <div class="workflow-top">
+                        <span class="workflow-cmd">/retention-nurture</span>
+                        <span class="workflow-tag automation">Retention</span>
                     </div>
-                    <h3 class="workflow-title">Customer Retention</h3>
-                    <p class="workflow-desc">Tăng CLV thông qua loyalty programs, upsell strategies, và win-back campaigns.</p>
+                    <h3 class="workflow-name">Customer Retention</h3>
+                    <p class="workflow-desc">Loyalty programs, upsell strategies, win-back campaigns.</p>
                     <div class="workflow-features">
                         <span class="workflow-feature">Health Score</span>
                         <span class="workflow-feature">Loyalty Programs</span>
-                        <span class="workflow-feature">Win-back Sequences</span>
+                        <span class="workflow-feature">Win-back</span>
                     </div>
-                    <div class="workflow-example">/retention-nurture "reduce churn 5% → 2%"</div>
+                    <div class="workflow-example">/retention-nurture "reduce churn"</div>
                 </article>
             </div>
         </section>
 
+        <div class="section-divider"></div>
+
         <!-- Tier 3 -->
-        <section id="tier-3" class="tier-section">
-            <div class="tier-header">
-                <div class="tier-icon tier-3">★★★</div>
-                <div class="tier-info">
-                    <h2>Tier 3 — Expert</h2>
-                    <p>4 workflows chuyên sâu cho video, testing, PR và affiliates</p>
-                </div>
-                <span class="tier-badge tier-3-badge">Expert</span>
+        <section id="tier3">
+            <div class="section-header">
+                <span class="section-tag tier3">★★★ Expert</span>
+                <h2 class="section-title">Tier 3 Workflows</h2>
+                <p class="section-desc">4 workflows chuyên sâu cho video, testing, PR, affiliates</p>
             </div>
 
             <div class="workflow-grid">
-                <!-- /video-launch -->
                 <article class="workflow-card">
-                    <div class="workflow-header">
-                        <span class="workflow-command">/video-launch</span>
-                        <span class="workflow-badge growth">Video</span>
+                    <div class="workflow-top">
+                        <span class="workflow-cmd">/video-launch</span>
+                        <span class="workflow-tag growth">Video</span>
                     </div>
-                    <h3 class="workflow-title">Video Marketing</h3>
-                    <p class="workflow-desc">Chiến lược video marketing đa nền tảng. YouTube, TikTok, Reels scripts và SEO optimization.</p>
+                    <h3 class="workflow-name">Video Marketing</h3>
+                    <p class="workflow-desc">YouTube, TikTok, Reels scripts và SEO optimization.</p>
                     <div class="workflow-features">
                         <span class="workflow-feature">Script Templates</span>
                         <span class="workflow-feature">YouTube SEO</span>
                         <span class="workflow-feature">Repurposing</span>
                     </div>
-                    <div class="workflow-example">/video-launch "TikTok Excel tips"</div>
+                    <div class="workflow-example">/video-launch "TikTok tips"</div>
                 </article>
 
-                <!-- /ab-test -->
                 <article class="workflow-card">
-                    <div class="workflow-header">
-                        <span class="workflow-command">/ab-test</span>
-                        <span class="workflow-badge analytics">Testing</span>
+                    <div class="workflow-top">
+                        <span class="workflow-cmd">/ab-test</span>
+                        <span class="workflow-tag analytics">Testing</span>
                     </div>
-                    <h3 class="workflow-title">A/B Testing</h3>
-                    <p class="workflow-desc">Framework A/B testing để tối ưu conversion rate. Hypothesis, sample size, statistical significance.</p>
+                    <h3 class="workflow-name">A/B Testing</h3>
+                    <p class="workflow-desc">Hypothesis, sample size, statistical significance, analysis.</p>
                     <div class="workflow-features">
                         <span class="workflow-feature">Hypothesis Builder</span>
-                        <span class="workflow-feature">Sample Calculator</span>
-                        <span class="workflow-feature">Analysis Template</span>
+                        <span class="workflow-feature">Sample Calc</span>
+                        <span class="workflow-feature">Analysis</span>
                     </div>
-                    <div class="workflow-example">/ab-test "landing page CTA"</div>
+                    <div class="workflow-example">/ab-test "landing CTA"</div>
                 </article>
 
-                <!-- /pr-launch -->
                 <article class="workflow-card">
-                    <div class="workflow-header">
-                        <span class="workflow-command">/pr-launch</span>
-                        <span class="workflow-badge strategy">PR</span>
+                    <div class="workflow-top">
+                        <span class="workflow-cmd">/pr-launch</span>
+                        <span class="workflow-tag strategy">PR</span>
                     </div>
-                    <h3 class="workflow-title">PR & Media Relations</h3>
-                    <p class="workflow-desc">Chiến lược PR và quan hệ báo chí. Press releases, media outreach, crisis management.</p>
+                    <h3 class="workflow-name">PR & Media</h3>
+                    <p class="workflow-desc">Press releases, media outreach, crisis management.</p>
                     <div class="workflow-features">
                         <span class="workflow-feature">Press Release</span>
                         <span class="workflow-feature">Media List</span>
-                        <span class="workflow-feature">Outreach Scripts</span>
+                        <span class="workflow-feature">Outreach</span>
                     </div>
                     <div class="workflow-example">/pr-launch "product launch"</div>
                 </article>
 
-                <!-- /affiliate-partner -->
                 <article class="workflow-card">
-                    <div class="workflow-header">
-                        <span class="workflow-command">/affiliate-partner</span>
-                        <span class="workflow-badge growth">Affiliates</span>
+                    <div class="workflow-top">
+                        <span class="workflow-cmd">/affiliate-partner</span>
+                        <span class="workflow-tag growth">Affiliates</span>
                     </div>
-                    <h3 class="workflow-title">Affiliate Program</h3>
-                    <p class="workflow-desc">Xây dựng và quản lý chương trình affiliate. Commission structure, recruitment, tracking.</p>
+                    <h3 class="workflow-name">Affiliate Program</h3>
+                    <p class="workflow-desc">Commission structure, partner recruitment, tracking.</p>
                     <div class="workflow-features">
-                        <span class="workflow-feature">Commission Structure</span>
-                        <span class="workflow-feature">Partner Recruitment</span>
-                        <span class="workflow-feature">Tracking Setup</span>
+                        <span class="workflow-feature">Commission</span>
+                        <span class="workflow-feature">Recruitment</span>
+                        <span class="workflow-feature">Tracking</span>
                     </div>
-                    <div class="workflow-example">/affiliate-partner "SaaS referral"</div>
+                    <div class="workflow-example">/affiliate-partner "referral"</div>
                 </article>
             </div>
         </section>
 
+        <div class="section-divider"></div>
+
         <!-- Use Cases -->
         <section id="use-cases">
             <div class="section-header">
-                <div class="section-label">Real-World Applications</div>
+                <span class="section-tag core">💡 Practical</span>
                 <h2 class="section-title">Use Cases</h2>
-                <p class="section-desc">Combine workflows để giải quyết các bài toán marketing phức tạp</p>
+                <p class="section-desc">Combine workflows để giải quyết bài toán marketing thực tế</p>
             </div>
 
             <div class="use-cases-grid">
-                <div class="use-case-card">
+                <div class="use-case">
                     <div class="use-case-icon">🎯</div>
                     <h4>Product Launch</h4>
                     <p>/marketing-campaign → /content-create → /ads-optimize → /pr-launch</p>
                 </div>
-                <div class="use-case-card">
+                <div class="use-case">
                     <div class="use-case-icon">📈</div>
                     <h4>Lead Generation</h4>
                     <p>/lead-generate → /email-automate → /seo-audit → /ads-optimize</p>
                 </div>
-                <div class="use-case-card">
+                <div class="use-case">
                     <div class="use-case-icon">🏆</div>
                     <h4>Brand Building</h4>
                     <p>/brand-identity → /social-engage → /influencer-collab → /content-create</p>
                 </div>
-                <div class="use-case-card">
+                <div class="use-case">
                     <div class="use-case-icon">💰</div>
                     <h4>Revenue Growth</h4>
                     <p>/retention-nurture → /email-automate → /ab-test → /affiliate-partner</p>
@@ -1264,52 +1278,53 @@
         </section>
 
         <!-- Tips Section -->
-        <section id="tips" class="tips-section">
+        <section id="tips" class="tips-section" style="margin-top: 80px;">
             <div class="section-header" style="margin-bottom: 0;">
-                <div class="section-label">Best Practices</div>
-                <h2 class="section-title" style="font-size: 1.8rem;">Pro Tips</h2>
+                <span class="section-tag tier1">🎯 Best Practices</span>
+                <h2 class="section-title" style="font-size: 1.6rem;">Pro Tips</h2>
             </div>
+
             <div class="tips-grid">
-                <div class="tip-card">
-                    <div class="tip-number">1</div>
+                <div class="tip">
+                    <div class="tip-num">1</div>
                     <div class="tip-content">
                         <h4>Start with Strategy</h4>
-                        <p>Luôn bắt đầu với /marketing-campaign để có chiến lược tổng thể trước khi đi vào chi tiết.</p>
+                        <p>Luôn bắt đầu với /marketing-campaign để có chiến lược tổng thể.</p>
                     </div>
                 </div>
-                <div class="tip-card">
-                    <div class="tip-number">2</div>
+                <div class="tip">
+                    <div class="tip-num">2</div>
                     <div class="tip-content">
-                        <h4>Data-Driven Decisions</h4>
-                        <p>Dùng /analytics-report weekly để track KPIs và điều chỉnh strategy kịp thời.</p>
+                        <h4>Data-Driven</h4>
+                        <p>Dùng /analytics-report weekly để track và điều chỉnh kịp thời.</p>
                     </div>
                 </div>
-                <div class="tip-card">
-                    <div class="tip-number">3</div>
+                <div class="tip">
+                    <div class="tip-num">3</div>
                     <div class="tip-content">
-                        <h4>Content Repurposing</h4>
-                        <p>/content-create giúp tạo 1 content → 5+ formats khác nhau, tiết kiệm 70% thời gian.</p>
+                        <h4>Repurpose Content</h4>
+                        <p>/content-create giúp tạo 1 content → 5+ formats khác nhau.</p>
                     </div>
                 </div>
-                <div class="tip-card">
-                    <div class="tip-number">4</div>
+                <div class="tip">
+                    <div class="tip-num">4</div>
                     <div class="tip-content">
                         <h4>Test Before Scale</h4>
-                        <p>Dùng /ab-test để validate ideas trước khi đầu tư lớn vào campaigns.</p>
+                        <p>Dùng /ab-test để validate ideas trước khi đầu tư lớn.</p>
                     </div>
                 </div>
-                <div class="tip-card">
-                    <div class="tip-number">5</div>
+                <div class="tip">
+                    <div class="tip-num">5</div>
                     <div class="tip-content">
-                        <h4>Know Your Competition</h4>
-                        <p>Chạy /competitor-spy quarterly để cập nhật market landscape và tìm opportunities.</p>
+                        <h4>Know Competition</h4>
+                        <p>Chạy /competitor-spy quarterly để cập nhật market landscape.</p>
                     </div>
                 </div>
-                <div class="tip-card">
-                    <div class="tip-number">6</div>
+                <div class="tip">
+                    <div class="tip-num">6</div>
                     <div class="tip-content">
                         <h4>Retention > Acquisition</h4>
-                        <p>/retention-nurture giúp tăng CLV với chi phí thấp hơn 5-7x so với acquire new customers.</p>
+                        <p>/retention-nurture giúp tăng CLV với chi phí thấp hơn 5-7x.</p>
                     </div>
                 </div>
             </div>
@@ -1317,8 +1332,8 @@
 
         <!-- CTA Section -->
         <section class="cta-section">
-            <h2>Ready to <span style="color: var(--gold-primary)">Transform</span> Your Marketing?</h2>
-            <p>Cài đặt ngay và bắt đầu automate marketing workflows của bạn</p>
+            <h2>Ready to <span class="gradient-text">Transform</span>?</h2>
+            <p>Cài đặt ngay và bắt đầu automate marketing workflows</p>
             <div class="cta-code">npx @pipyl/antigravity-marketing-workflows init</div>
         </section>
     </main>
@@ -1327,7 +1342,7 @@
     <footer class="footer">
         <div class="footer-logo">📣</div>
         <h3>Happy Marketing!</h3>
-        <p>Marketing Workflows for Antigravity IDE — Grow faster, smarter</p>
+        <p>Marketing Workflows for Antigravity IDE</p>
         <div class="footer-links">
             <a href="https://github.com/PiPyL/antigravity-marketing-workflows">GitHub</a>
             <a href="https://www.npmjs.com/package/@pipyl/antigravity-marketing-workflows">npm</a>
@@ -1341,59 +1356,61 @@
     </button>
 
     <script>
-        // Smooth scroll navigation
-        document.querySelectorAll('.nav-btn').forEach(btn => {
-            btn.addEventListener('click', (e) => {
+        // Spotlight effect
+        const spotlight = document.getElementById('spotlight');
+        document.addEventListener('mousemove', (e) => {
+            spotlight.style.left = e.clientX + 'px';
+            spotlight.style.top = e.clientY + 'px';
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', (e) => {
                 e.preventDefault();
-                const target = document.querySelector(btn.getAttribute('href'));
+                const target = document.querySelector(link.getAttribute('href'));
                 if (target) {
                     const navHeight = document.querySelector('.nav').offsetHeight;
-                    const targetPosition = target.offsetTop - navHeight - 20;
-                    window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+                    window.scrollTo({
+                        top: target.offsetTop - navHeight - 24,
+                        behavior: 'smooth'
+                    });
                 }
             });
         });
 
-        // Scroll to top button
-        const scrollTopBtn = document.getElementById('scrollTop');
-        
+        // Scroll to top
+        const scrollBtn = document.getElementById('scrollTop');
         window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 400) {
-                scrollTopBtn.classList.add('visible');
-            } else {
-                scrollTopBtn.classList.remove('visible');
-            }
+            scrollBtn.classList.toggle('visible', window.pageYOffset > 400);
         });
-
-        scrollTopBtn.addEventListener('click', () => {
+        scrollBtn.addEventListener('click', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
         // Active nav state
         const sections = document.querySelectorAll('section[id]');
-        const navBtns = document.querySelectorAll('.nav-btn');
-
-        const updateActiveNav = () => {
+        const navLinks = document.querySelectorAll('.nav-link');
+        
+        const updateNav = () => {
             let current = '';
             const navHeight = document.querySelector('.nav').offsetHeight;
             
             sections.forEach(section => {
-                const sectionTop = section.offsetTop - navHeight - 100;
-                if (pageYOffset >= sectionTop) {
+                if (window.pageYOffset >= section.offsetTop - navHeight - 100) {
                     current = section.getAttribute('id');
                 }
             });
 
-            navBtns.forEach(btn => {
-                btn.classList.remove('active');
-                if (btn.getAttribute('href') === `#${current}`) {
-                    btn.classList.add('active');
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
                 }
             });
         };
 
-        window.addEventListener('scroll', updateActiveNav);
-        updateActiveNav();
+        window.addEventListener('scroll', updateNav);
+        updateNav();
     </script>
 </body>
 </html>
