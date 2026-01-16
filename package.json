@@ -1,7 +1,7 @@
 {
   "name": "@pipyl/antigravity-marketing-workflows",
-  "version": "1.0.1",
-  "description": "Bộ 6 marketing workflows cho Antigravity IDE - Tự động hóa quy trình marketing",
+  "version": "2.0.0",
+  "description": "Bộ 16 marketing workflows cho Antigravity IDE - Tự động hóa quy trình marketing toàn diện",
   "author": "AIDevFlyDino",
   "license": "MIT",
   "repository": {
