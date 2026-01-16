@@ -6,7 +6,11 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/aidevflydino/marketing-workflows"
+    "url": "git+https://github.com/PiPyL/antigravity-marketing-workflows.git"
+  },
+  "homepage": "https://github.com/PiPyL/antigravity-marketing-workflows#readme",
+  "bugs": {
+    "url": "https://github.com/PiPyL/antigravity-marketing-workflows/issues"
   },
   "keywords": [
     "antigravity",
