@@ -801,6 +801,42 @@
             color: var(--aurora-cyan);
         }
 
+        /* Language Switcher */
+        .lang-switcher {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 200;
+            display: flex;
+            gap: 4px;
+            padding: 4px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 100px;
+            backdrop-filter: blur(10px);
+        }
+
+        .lang-btn {
+            padding: 8px 14px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            background: transparent;
+            border: none;
+            border-radius: 100px;
+            cursor: pointer;
+            transition: var(--transition-fast);
+        }
+
+        .lang-btn:hover {
+            color: var(--text-primary);
+        }
+
+        .lang-btn.active {
+            background: var(--aurora-gradient);
+            color: var(--bg-primary);
+        }
+
         /* Scroll to top */
         .scroll-top {
             position: fixed;
@@ -890,14 +926,20 @@
     <div class="noise-overlay"></div>
     <div class="spotlight" id="spotlight"></div>
 
+    <!-- Language Switcher -->
+    <div class="lang-switcher">
+        <button class="lang-btn active" data-lang="vi" onclick="applyTranslations('vi')">VI</button>
+        <button class="lang-btn" data-lang="en" onclick="applyTranslations('en')">EN</button>
+    </div>
+
     <!-- Header -->
     <header class="header">
         <div class="header-eyebrow">
             <span class="dot"></span>
-            <span>Marketing Automation Suite</span>
+            <span data-i18n="eyebrow">Marketing Automation Suite</span>
         </div>
-        <h1>Marketing<br><span class="gradient-text">Workflows</span></h1>
-        <p class="subtitle">Bộ 16 workflows mạnh mẽ cho Antigravity IDE, tự động hóa toàn bộ quy trình marketing từ chiến lược đến thực thi</p>
+        <h1><span data-i18n="title">Marketing</span><br><span class="gradient-text" data-i18n="titleHighlight">Workflows</span></h1>
+        <p class="subtitle" data-i18n="subtitle">Bộ 16 workflows mạnh mẽ cho Antigravity IDE, tự động hóa toàn bộ quy trình marketing từ chiến lược đến thực thi</p>
         
         <div class="stats-row">
             <div class="stat-item">
@@ -956,9 +998,9 @@
         <!-- Core Workflows -->
         <section id="core">
             <div class="section-header">
-                <span class="section-tag core">✦ Foundation</span>
-                <h2 class="section-title">Core Workflows</h2>
-                <p class="section-desc">6 essential workflows cho mọi chiến dịch marketing</p>
+                <span class="section-tag core" data-i18n="coreTag">✦ Foundation</span>
+                <h2 class="section-title" data-i18n="coreTitle">Core Workflows</h2>
+                <p class="section-desc" data-i18n="coreDesc">6 essential workflows cho mọi chiến dịch marketing</p>
             </div>
 
             <div class="workflow-grid">
@@ -967,8 +1009,8 @@
                         <span class="workflow-cmd">/marketing-campaign</span>
                         <span class="workflow-tag strategy">Strategy</span>
                     </div>
-                    <h3 class="workflow-name">Campaign Planning</h3>
-                    <p class="workflow-desc">End-to-end marketing campaign planning. Từ brief đến execution với KPIs tracking.</p>
+                    <h3 class="workflow-name" data-i18n="wfCampaignName">Campaign Planning</h3>
+                    <p class="workflow-desc" data-i18n="wfCampaignDesc">End-to-end marketing campaign planning. Từ brief đến execution với KPIs tracking.</p>
                     <div class="workflow-features">
                         <span class="workflow-feature">SMART Goals</span>
                         <span class="workflow-feature">Channel Strategy</span>
@@ -982,8 +1024,8 @@
                         <span class="workflow-cmd">/content-create</span>
                         <span class="workflow-tag core">Multi-Platform</span>
                     </div>
-                    <h3 class="workflow-name">Content Marketing</h3>
-                    <p class="workflow-desc">Tạo content cho nhiều platform từ một ý tưởng. Blog, social, email, video.</p>
+                    <h3 class="workflow-name" data-i18n="wfContentName">Content Marketing</h3>
+                    <p class="workflow-desc" data-i18n="wfContentDesc">Tạo content cho nhiều platform từ một ý tưởng. Blog, social, email, video.</p>
                     <div class="workflow-features">
                         <span class="workflow-feature">SEO Optimized</span>
                         <span class="workflow-feature">Repurposing Matrix</span>
@@ -1341,8 +1383,8 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-logo">📣</div>
-        <h3>Happy Marketing!</h3>
-        <p>Marketing Workflows for Antigravity IDE</p>
+        <h3 data-i18n="footerTitle">Happy Marketing!</h3>
+        <p data-i18n="footerDesc">Marketing Workflows for Antigravity IDE</p>
         <div class="footer-links">
             <a href="https://github.com/PiPyL/antigravity-marketing-workflows">GitHub</a>
             <a href="https://www.npmjs.com/package/@pipyl/antigravity-marketing-workflows">npm</a>
@@ -1355,6 +1397,8 @@
         <svg viewBox="0 0 24 24"><path d="M7 14l5-5 5 5z"/></svg>
     </button>
 
+    <!-- i18n Script -->
+    <script src="i18n.js"></script>
     <script>
         // Spotlight effect
         const spotlight = document.getElementById('spotlight');
